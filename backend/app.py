@@ -57,5 +57,6 @@ def optimize():
 
 # Configuração para rodar no Render
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port, debug=False)
+    import os
+    port = int(os.environ.get("PORT", 5000))  # Porta dinâmica fornecida pelo Render
+    app.run(host="0.0.0.0", port=port, debug=False)  # Desative o debug para produção
