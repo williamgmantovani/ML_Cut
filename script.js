@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (length && quantity) cuts[length] = quantity;
         });
 
-        const response = await fetch("https://seu-backend.onrender.com/optimize", {
+        const response = await fetch("https://ml-cut.onrender.com", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
