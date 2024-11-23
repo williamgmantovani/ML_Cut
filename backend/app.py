@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from collections import defaultdict
+import os
 
 app = Flask(__name__)
 
@@ -38,4 +39,5 @@ def optimize():
         return jsonify({"error": str(e)}), 400
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  # Render fornece a porta pelo ambiente
+    app.run(host="0.0.0.0", port=port, debug=False)  # Desative o debug para produção
