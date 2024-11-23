@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otimização de Corte</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Otimização de Corte de Barras</h1>
+    <form id="optimizationForm">
+        <label for="bar_length">Comprimento da Barra (mm):</label>
+        <input type="number" id="bar_length" name="bar_length" required><br><br>
+        <label for="cut_loss">Perda por Corte (mm):</label>
+        <input type="number" id="cut_loss" name="cut_loss" required><br><br>
+        <label for="cuts">Cortes (formato: comprimento:quantidade, separados por linha):</label><br>
+        <textarea id="cuts" name="cuts" rows="10" cols="30"></textarea><br><br>
+        <button type="submit">Executar</button>
+    </form>
+    <div id="result"></div>
+    <script src="script.js"></script>
+</body>
+</html>
