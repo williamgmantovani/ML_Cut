@@ -7,17 +7,46 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Otimização de Corte de Barras</h1>
-    <form id="optimizationForm">
-        <label for="bar_length">Comprimento da Barra (mm):</label>
-        <input type="number" id="bar_length" name="bar_length" required><br><br>
-        <label for="cut_loss">Perda por Corte (mm):</label>
-        <input type="number" id="cut_loss" name="cut_loss" required><br><br>
-        <label for="cuts">Cortes (formato: comprimento:quantidade, separados por linha):</label><br>
-        <textarea id="cuts" name="cuts" rows="10" cols="30"></textarea><br><br>
-        <button type="submit">Executar</button>
-    </form>
-    <div id="result"></div>
+    <div class="container">
+        <h1>Otimização de Corte de Barras</h1>
+        <form id="optimizationForm">
+            <div class="input-group">
+                <label for="bar_length">Comprimento da Barra (mm):</label>
+                <input type="number" id="bar_length" name="bar_length" required placeholder="Ex.: 6000">
+            </div>
+            <div class="input-group">
+                <label for="cut_loss">Perda por Corte (mm):</label>
+                <input type="number" id="cut_loss" name="cut_loss" required placeholder="Ex.: 5">
+            </div>
+
+            <h2>Lista de Cortes</h2>
+            <table id="cutsTable">
+                <thead>
+                    <tr>
+                        <th>Comprimento (mm)</th>
+                        <th>Quantidade</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="number" name="length[]" placeholder="Ex.: 1500" required></td>
+                        <td><input type="number" name="quantity[]" placeholder="Ex.: 3" required></td>
+                        <td><button type="button" class="remove-row">Remover</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="button" id="addRow">Adicionar Linha</button>
+
+            <div class="actions">
+                <button type="submit">Executar Otimização</button>
+            </div>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
+
